@@ -1,0 +1,59 @@
+{
+  "name": "rn_in_electron",
+  "version": "0.1.0",
+  "author": "Nazar Matviyiv",
+  "description": "React Native desktop app",
+  "private": true,
+  "dependencies": {
+    "deep-assign": "^2.0.0",
+    "history": "^4.7.2",
+    "lodash": "^4.17.5",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-native-web": "^0.4.0",
+    "react-redux": "5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts-with-decorators": "^0.9.5-5",
+    "redux": "3.5.2",
+    "redux-action-buffer": "^1.2.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-persist": "4.9.1",
+    "redux-saga": "0.15.4"
+  },
+  "scripts": {
+    "start": "npm run react-start -p 3000 && npm run electron-start -p 3000",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node src/electron-wait-react",
+    "react-start": "react-scripts start",
+    "pack": "build --dir",
+    "dist": "REACT_APP_ENVIRONMENT=prod npm run build && build",
+    "postinstall": "electron-builder install-app-deps",
+    "ied": "electron-builder install-app-deps",
+    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron ."
+  },
+  "devDependencies": {
+    "babel-plugin-react-native-web": "^0.4.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "electron": "^1.8.2",
+    "electron-builder": "^19.56.0",
+    "expect.js": "^0.3.1"
+  },
+  "homepage": "./",
+  "main": "src/electron-starter.js",
+  "proxy": "http://localhost:4434",
+  "build": {
+    "appId": "com.electron.electron-with-create-react-app",
+    "win": {
+      "icon": "./logo-white.png"
+    },
+    "extends": null,
+    "directories": {
+      "buildResources": "public"
+    }
+  }
+}
