@@ -29,7 +29,7 @@ const App = () => (
   <Provider store={store}>
       <ConnectedRouter history={history}>
         <div className="routes-container" >
-          {window.location.pathname.includes('index.html') && <Redirect to="/" />}
+          <Redirect from='/index.html' to='/'/>
           <Route exact={true} path="/" component={RootComponentConnected}/>
           <Route path="/main" component={MainScreen} />
         </div>
